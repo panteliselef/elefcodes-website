@@ -1,0 +1,112 @@
+.App {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Circular Std','Open Sans', sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+.welcome {
+  height: 80vh;
+  padding: 0 20px;
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+}
+.welcome .photo {
+  width: 4em;
+  min-width: 4em;
+  height: 4em;
+  /* background-image: url("./images/upit-04271.jpg"); */
+  background-image: url("./images/elefcodes.jpg");
+  background-size: cover;
+  background-position: 28%;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+.welcome span.blue-box {
+  color: #8BC5ED;
+}
+.welcome .title {
+  max-width: 10em;
+  text-align: left;
+}
+
+.object {
+  z-index: -1;
+  height: 400px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 50em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  /* background-position: top left; */
+  background-size: cover;
+  background-image: url("./images/path3.svg");
+}
+.object div {
+  margin-top: 4em;
+  margin-right: 2em;
+  /* line-height: 1.4em; */
+  font-size: 1.4em;
+  align-self: center;
+  max-width: 200px;
+  color: #fff;
+  text-align: left;
+  font-weight: 500;
+}
+.object div span {
+  font-weight: 900;
+}
+.object img {
+  /* display: flex; */
+  width: 16vw;
+  height: 16vw;
+  min-width: 14em;
+  min-height: 14em;
+  max-width: 17em;
+  max-height: 17em;
+  margin-right: 5vw;
+  margin-bottom: 5vh;
+}
+@media screen and (max-width: 800px) {
+  .welcome {
+    margin-top: 2em;
+    height: 20%;
+    font-size: 1.7em;
+    height: 100px;
+  }
+  .welcome .title{
+    font-size: 0.8em;
+  }
+  .object {
+    height: 300px;
+    width: 100vw;
+    background-position: top right;
+  }
+  .object img {
+    min-width: 150px;
+    min-height: 150px;
+  }
+  .object div {
+    margin-left: 10px;
+    margin-right: 1em;
+    max-width: 150px;
+    font-size: 1.1em;
+  }
+}
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  .welcome .title{
+    color: #fff;
+  }
+  .welcome span.blue-box {
+    color: #a4d7f9;
+  }
+  .object div {
+    align-self: flex-end;
+    margin-bottom: 2em;
+  }
+}
