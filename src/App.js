@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import './circular-fonts/stylesheet.css';
 import insta from './images/instagram.png'
 
 class App extends Component {
