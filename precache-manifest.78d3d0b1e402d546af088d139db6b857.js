@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "b5fa1b553516d1cf8d03d6b4588058a0",
-    "url": "/static/media/CircularStd-Black.b5fa1b55.woff"
+    "revision": "6b37ec3ab40ff00c70efe9a9770deac0",
+    "url": "/static/media/CircularStd-Black.6b37ec3a.ttf"
   },
   {
     "revision": "0f95c4a07b7379fa87d4",
@@ -36,16 +36,20 @@ self.__precacheManifest = [
     "url": "/static/media/CircularStd-Black.a7d0eebb.woff2"
   },
   {
-    "revision": "35e6fb86d66a830d45e377494420c11b",
-    "url": "/static/media/CircularStd-Book.35e6fb86.woff2"
+    "revision": "b5fa1b553516d1cf8d03d6b4588058a0",
+    "url": "/static/media/CircularStd-Black.b5fa1b55.woff"
   },
   {
     "revision": "0f95c4a07b7379fa87d4",
     "url": "/static/js/main.0f95c4a0.chunk.js"
   },
   {
-    "revision": "6b37ec3ab40ff00c70efe9a9770deac0",
-    "url": "/static/media/CircularStd-Black.6b37ec3a.ttf"
+    "revision": "35e6fb86d66a830d45e377494420c11b",
+    "url": "/static/media/CircularStd-Book.35e6fb86.woff2"
+  },
+  {
+    "revision": "9e31161108ad69cc75264c71274e8a58",
+    "url": "/static/media/CircularStd-Book.9e311611.ttf"
   },
   {
     "revision": "c47d7e581f2a563f8dedd4509c106fb8",
@@ -56,31 +60,27 @@ self.__precacheManifest = [
     "url": "/static/media/CircularStd-Medium.0afc4e78.woff2"
   },
   {
-    "revision": "9e31161108ad69cc75264c71274e8a58",
-    "url": "/static/media/CircularStd-Book.9e311611.ttf"
+    "revision": "e47ea4c0b9151fe6cbd8e2f332113559",
+    "url": "/static/media/CircularStd-Medium.e47ea4c0.woff"
   },
   {
     "revision": "e4ba63a6345c96f3cb813ef00340beda",
     "url": "/static/media/CircularStd-Medium.e4ba63a6.ttf"
   },
   {
-    "revision": "e47ea4c0b9151fe6cbd8e2f332113559",
-    "url": "/static/media/CircularStd-Medium.e47ea4c0.woff"
+    "revision": "b26584c8d17834161eb3460b00f2affd",
+    "url": "/static/media/CircularStd-Bold.b26584c8.woff2"
   },
   {
     "revision": "6f4fe3ca482221e7c0d8c1baa5f31100",
     "url": "/static/media/CircularStd-Bold.6f4fe3ca.woff"
   },
   {
-    "revision": "b26584c8d17834161eb3460b00f2affd",
-    "url": "/static/media/CircularStd-Bold.b26584c8.woff2"
-  },
-  {
     "revision": "145ae1e715558908e29811cba088758e",
     "url": "/static/media/CircularStd-Bold.145ae1e7.ttf"
   },
   {
-    "revision": "adfcc84574c5b59887c08e2f745fd1e4",
+    "revision": "52c5e9cc4f7fcc081116af868ff15143",
     "url": "/index.html"
   }
 ];
