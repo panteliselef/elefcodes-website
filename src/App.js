@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
-import insta from './images/instagram.png'
+import ComingSoon from './pages/ComingSoon';
+import StartPage from './pages/StartPage';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="welcome">
-          <div className="photo"></div>
-          <div className="title">
-            <span className="blue-box">New </span>
-            Website is coming soon ...
-          </div>
+      <BrowserRouter>
+        <div className="App">
+          {/* <Navbar/> */}
+          <Switch>
+            <Route exact path='/' component={StartPage} />
+            <Route exact path='/soon' component={ComingSoon} />
+            {/* <Route path='/project/:id' component={ProjectDetails} />
+            <Route path='/signin' component={SignIn} />
+            <Route path='/signup' component={SignUp} />
+            <Route path='/create' component={CreateProject} /> */}
+          </Switch>
         </div>
-        <div className="object">
-          <div>Scan this nametag on Instagram to <span> follow</span> me</div>
-          <img src={insta} alt=""/>
-        </div>
-      </div>
+      </BrowserRouter>
     );
   }
 }

@@ -1,10 +1,22 @@
+
+
 .App {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   font-family: 'Circular Std','Open Sans', sans-serif;
   font-weight: 900;
   font-style: normal;
+  color: #333;
+  
 }
+
+.container {
+  height: calc(100vh - 3em);
+  width: 80vw;
+  margin: auto;
+  margin-top: 3em;
+}
+
 .welcome {
   height: 80vh;
   padding: 0 20px;
@@ -12,7 +24,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3em;
+  
 }
 .welcome .photo {
   width: 4em;
@@ -25,25 +37,92 @@
   border-radius: 50%;
   margin-right: 30px;
 }
+.container span.blue-box,
 .welcome span.blue-box {
   color: #8BC5ED;
 }
-.welcome .title {
+.title {
   max-width: 10em;
   text-align: left;
+  font-size: 3.5em;
+}
+.container .title {
+  /* margin-top: 0.7em; */
+}
+.main-photo {
+  max-width: 48em;
+  width: 100%;
+  /* width: 68%; */
+  /* width: 100%; */
+  /* margin-left: 5em; */
+  /* margin-top: -20px; */
 }
 
+.rounded-button {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-size: 1.2em;
+  padding: 13px 40px;
+  color: #fff;
+  background-color: #80BDEA;
+  border-radius: 40em;
+  display: inline;
+  text-overflow: ellipsis;
+
+  /* Needed to make it work */
+  overflow: hidden;
+  white-space: nowrap;
+  /* flex-direction:  */
+  /* display: inline-block; */
+  
+}
+
+.menu-container {
+  width: 100%;
+  height: 100vh; 
+  background: #fff;
+  transform: translateX(0em);
+  position: fixed;
+  overflow: scroll;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: 0.4s;
+}
+.menu-container.disabled {
+  transform: translateX(10em);
+  opacity: 0;
+}
+
+.menu-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding: 2em 30%;
+
+}
+.menu-container ul li {
+  transition: 0.2s;
+  transform: translateX(0em);
+}
+.menu-container ul li a{
+  text-decoration:  none;
+  color: inherit;
+}
+.menu-container ul li:hover{
+  color: #80BDEA;
+  transform: translateX(0.5em);
+}
 .object {
   z-index: -1;
-  height: 400px;
+  height: 30em;
+  width: 50em;
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 50em;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  /* background-position: top left; */
   background-size: cover;
   background-image: url("./images/path3.svg");
 }
@@ -70,7 +149,7 @@
   max-width: 17em;
   max-height: 17em;
   margin-right: 5vw;
-  margin-bottom: 5vh;
+  margin-bottom: 5em;
 }
 @media screen and (max-width: 850px) {
   .welcome {
@@ -114,3 +193,42 @@
     max-width: 25vw;
   }
 }
+
+
+
+/* BURGER MENU */
+
+.burger {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  top: 2em;
+  right: 4%;
+  z-index: 10;
+}
+
+.line{
+  width: 2.9em;
+  height: 6px;
+  border-radius: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change#bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 7px);
+}
+
+.change#bar2 {
+  opacity: 0;
+  transform: translate(-10em, 0);
+  /* display: none; */
+}
+
+.change#bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-9px, -8px);
+}
+/* END */
