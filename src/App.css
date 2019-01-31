@@ -2,19 +2,112 @@
 
 .App {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  /* font-family: 'Open Sans', sans-serif; */
+  /* letter-spacing: -3px; */
   font-family: 'Circular Std','Open Sans', sans-serif;
   font-weight: 900;
   font-style: normal;
   color: #333;
   
 }
+.subtitle {
+  font-size: 1.3em;
+}
+select {
+  appearance: none;
+  background-color: #fff;
+  border: none;
+  padding: 1em;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.9em;
+  font-family: inherit;
+  z-index: 1;
+  box-shadow: 0 1px 6px 1px rgba(0,0,0,0.13);
+}
 
+
+.project-cards-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: space-between;
+  width: 100%;
+  margin-top: 2em;
+}
+.post-card .image-frame {
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 15em;
+}
+.project-card, .post-card{
+  font-weight: 400;
+  flex: 1 1 auto;
+  margin: 1em;
+  margin-left: 0;
+  width: 18em;
+  max-width: 18em;
+  border-radius: 5px;
+  z-index: 1;
+  background: #FFFFFF;
+  box-shadow: 0 1px 6px 1px rgba(0,0,0,0.13);
+  overflow:hidden;
+}
+.post-card {
+  font-size: 0.9em;
+}
+.project-card .subtitle {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.project-card .top-section {
+  padding-top: 0.6em;
+  padding-left: 1em;
+  display: flex;
+  padding-bottom: 0;
+  padding-right: 0;
+  background-color: #CBE0F0;
+}
+.project-card .top-section-image {
+  background-image: url("./images/project-card-person.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  width: 100%;
+  height: 90px;
+}
+.project-card .bottom-section {
+  background-color: #fff;
+  padding: 1em;
+  text-align: left;
+}
+.project-card .details {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 1em;
+  font-weight: 400;
+  width: 90%;
+}
+.padding-1 {
+  padding-bottom: 1em;
+}
+div[class^="col"] {
+  
+  padding-left: 0!important;
+  padding-right: 0!important;
+}
 .container {
   height: calc(100vh - 3em);
-  width: 80vw;
+  width: 80vw !important;
   margin: auto;
   margin-top: 3em;
+  /* padding-left: 0!important;
+  padding-right: 0!important; */
 }
 
 .welcome {
@@ -46,11 +139,14 @@
   text-align: left;
   font-size: 3.5em;
 }
+
 .container .title {
   /* margin-top: 0.7em; */
 }
 .main-photo {
-  max-width: 48em;
+  /* max-width: 48em; */
+  min-height: 20em;
+  max-height: calc(100vh - 20em);
   width: 100%;
   /* width: 68%; */
   /* width: 100%; */
@@ -66,7 +162,7 @@
   color: #fff;
   background-color: #80BDEA;
   border-radius: 40em;
-  display: inline;
+  display: inline-block;
   text-overflow: ellipsis;
 
   /* Needed to make it work */
@@ -92,6 +188,7 @@
 .menu-container.disabled {
   transform: translateX(10em);
   opacity: 0;
+  z-index: -1;
 }
 
 .menu-container ul {
@@ -151,7 +248,35 @@
   margin-right: 5vw;
   margin-bottom: 5em;
 }
+#some-text {
+  text-align: left
+}
+@media screen and (max-width: 500px) {
+  .main-photo {
+    min-height: 15em;
+  }
+  #some-text {
+    text-align: center;
+  }
+  .title {
+    font-size: 2.3em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 2.5em;
+  }
+}
 @media screen and (max-width: 850px) {
+  .container {
+    margin-top: 2em;
+    width: 98vw !important;
+  }
+
+  .project-cards-container {
+    justify-content: center;
+  }
+
   .welcome {
     margin-top: 2em;
     height: 20%;

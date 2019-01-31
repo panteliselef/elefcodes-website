@@ -11,9 +11,9 @@ const Menu  = ({visible}) => {
         <PageTitle text={['Menu']}/>
 
         <ul>
-          <li className="title"><NavLink to='/home' >Home</NavLink></li>
-          <li className="title"><NavLink to='/home' >Instagram</NavLink></li>
-          <li className="title"><NavLink to='/home' >Projects</NavLink></li>
+          <li className="title"><NavLink to='/' >Home</NavLink></li>
+          <li className="title"><NavLink to='/instagram' >Instagram</NavLink></li>
+          <li className="title"><NavLink to='/projects' >Projects</NavLink></li>
         </ul>
       </div>
       <div className="object">
