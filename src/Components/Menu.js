@@ -2,10 +2,11 @@ import React from "react";
 import { NavLink } from 'react-router-dom';
 import PageTitle from "./PageTitle";
 import insta from '../images/instagram.png'
-const Menu  = ({visible}) => {
 
+const Menu  = React.forwardRef(({visible},ref) => {
+  // className={visible?"menu-container":"menu-container disabled"}
   return (
-    <div className={visible?"menu-container":"menu-container disabled"}>
+    <div ref={ref} className="menu-container disabled">
       <div className="container">
 
         <PageTitle text={['Menu']}/>
@@ -23,6 +24,6 @@ const Menu  = ({visible}) => {
 
     </div>
   );
-}
+})
 
 export default Menu ;

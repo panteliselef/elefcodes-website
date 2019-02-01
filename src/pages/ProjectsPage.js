@@ -14,6 +14,7 @@ import coverPhoto from '../images/projects-page-image.svg';
 class ProjectsPage extends Component {
   constructor(){
     super();
+    this.menuRef = React.createRef();
     this.state = {
       'repos':[],
       'selectedValue':'Recent Projects',
@@ -28,6 +29,18 @@ class ProjectsPage extends Component {
 
   toggleBurger = () => {
     this.setState({burgerMenuOpened:!this.state.burgerMenuOpened});
+    console.log(this.menuRef.current.classList);
+    if(this.state.burgerMenuOpened) {
+      this.menuRef.current.classList.add("disabled");
+      setTimeout(()=>{
+        this.menuRef.current.style.display = 'none';
+      },500)
+    }else {
+      this.menuRef.current.style.display = 'block';
+      setTimeout(()=>{
+        this.menuRef.current.classList.remove("disabled");
+      },50)
+    }
   }
 
   componentDidMount = () => {
@@ -69,11 +82,11 @@ class ProjectsPage extends Component {
             </div>
           </Row>
         </Grid>
-        <div style={{position:'fixed',backgroundImage:'url('+coverPhoto+')',bottom:'0',right:'0',width:'70%',height:'50em',backgroundRepeat:'no-repeat'}}>
+        <div style={{position:'fixed',backgroundImage:'url('+coverPhoto+')',bottom:'0',right:'0',width:'70%',height:'50em',backgroundRepeat:'no-repeat',zIndex:-1}}>
 
         </div>
         <BurgerMenuButton toggleBurger={this.toggleBurger} opened={this.state.burgerMenuOpened}/>
-        <Menu visible={this.state.burgerMenuOpened}/>
+        <Menu ref={this.menuRef}/>
       </div>
       
     );

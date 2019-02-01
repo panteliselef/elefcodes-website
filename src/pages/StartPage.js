@@ -43,29 +43,32 @@ class StartPage extends Component {
             </Col>
           </Row>
           <Dividor top="1em"/>
-          <Row between="xs" middle="xs">
-            <Col xsOffset={4} mdOffset={0} xs={4} md={2} className="padding-1">
-              <Row center="xs">
-                <Col xs={6} md={4}>
-                  <img src={twitterIcon} width="auto" height="28px" style={{zIndex:'1'}} alt=""/>
-                </Col>
-                <Col xs={6} md={2}>
-                  <img src={instagramIcon} width="auto" height="28px" style={{zIndex:'1'}} alt=""/>
+          <div style={{maxWidth:"1000px",margin:"auto"}}>
 
-                </Col>
-              </Row>
-            </Col>
-            <Col xs={12} md={4} className="padding-1">
-              <RoundedButton/>
-            </Col>
-            <Col xsOffset={0} xs={12} md={4} className="padding-1">
-              <div id="some-text" style={{maxWidth:'20em',fontWeight:'bold',lineHeight:'1.5em',margin:'auto'}}>I am a Web Developer and a CS student with
-                a lot of experience on creating awesome
-                UIs and UXs
-              </div>
-            </Col>
-            
-          </Row>
+            <Row between="xs" middle="xs">
+              <Col xsOffset={4} mdOffset={0} xs={4} md={2} className="padding-1">
+                <Row center="xs">
+                  <Col xs={6} md={4}>
+                    <img src={twitterIcon} width="auto" height="28px" style={{zIndex:'1'}} alt=""/>
+                  </Col>
+                  <Col xs={6} md={2}>
+                    <img src={instagramIcon} width="auto" height="28px" style={{zIndex:'1'}} alt=""/>
+
+                  </Col>
+                </Row>
+              </Col>
+              <Col xs={12} md={4} className="padding-1">
+                <RoundedButton/>
+              </Col>
+              <Col xsOffset={0} xs={12} md={4} className="padding-1">
+                <div id="some-text" style={{maxWidth:'20em',fontWeight:'bold',lineHeight:'1.5em',margin:'auto'}}>I am a Web Developer and a CS student with
+                  a lot of experience on creating awesome
+                  UIs and UXs
+                </div>
+              </Col>
+              
+            </Row>
+          </div>
           <Dividor top="20px"/>
         </Grid>
         <BurgerMenuButton toggleBurger={this.toggleBurger} opened={this.state.burgerMenuOpened}/>

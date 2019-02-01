@@ -42,7 +42,7 @@ select {
   background-position: center center;
   background-size: cover;
   width: 100%;
-  height: 15em;
+  height: 18em;
 }
 .project-card, .post-card{
   font-weight: 400;
@@ -52,13 +52,14 @@ select {
   width: 18em;
   max-width: 18em;
   border-radius: 5px;
-  z-index: 1;
+  z-index: 0;
   background: #FFFFFF;
   box-shadow: 0 1px 6px 1px rgba(0,0,0,0.13);
   overflow:hidden;
 }
 .post-card {
   font-size: 0.9em;
+  max-width: 20em;
 }
 .project-card .subtitle {
   overflow: hidden;
@@ -186,9 +187,12 @@ div[class^="col"] {
   transition: 0.4s;
 }
 .menu-container.disabled {
+  width: 100%;
+  /* transform: translateX(80%); */
   transform: translateX(10em);
+  /* margin-left: 100%; */
   opacity: 0;
-  z-index: -1;
+  z-index: 1;
 }
 
 .menu-container ul {
