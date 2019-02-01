@@ -27,7 +27,55 @@ select {
   box-shadow: 0 1px 6px 1px rgba(0,0,0,0.13);
 }
 
+.shadow {
+  box-shadow: 0 1px 6px 1px rgba(0,0,0,0.13);
+}
+.cover-photo {
+  z-index: -1;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  /* width: 59em; */
+  height: 50em;
+  width: 50%;
+  /* max-width: 60em; */
+  height: 90vh;
+  max-height: 100em;
+  /* transform: translate(0vh,7vh); */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.cover-photo-large {
+  width: 70%;
+}
+.loading-div {
+  background-color: #fff;
+  text-transform: capitalize;
+  text-align: left;
+  overflow: hidden;
+  width: 13em;
+}
+.loading-div-text {
+  font-weight: 600;
+  margin-left: 1em; 
+}
 
+@keyframes loading-animation {
+  0%   { 
+    transform: translateX(-15em);
+  }
+  100% {
+    transform: translateX(15em);
+  }
+}
+
+.animated-bar {
+  width: 15em;
+  height: 4px;
+  border-radius: 4px;
+  animation: loading-animation 1s infinite;
+  background-color: #80BDEA;
+}
 .project-cards-container {
   display: flex;
   flex-direction: row;
@@ -160,9 +208,12 @@ div[class^="col"] {
   letter-spacing: 0.5px;
   font-size: 1.2em;
   padding: 13px 40px;
+  text-decoration: none;
   color: #fff;
   background-color: #80BDEA;
   border-radius: 40em;
+  background: #80BDEA;
+  box-shadow: 0 1px 6px 1px rgba(128,189,234,0.64);
   display: inline-block;
   text-overflow: ellipsis;
 
@@ -171,7 +222,11 @@ div[class^="col"] {
   white-space: nowrap;
   /* flex-direction:  */
   /* display: inline-block; */
+  transition: all .2s;
   
+}
+.rounded-button:hover {
+  color: #333;
 }
 
 .menu-container {
@@ -265,13 +320,23 @@ div[class^="col"] {
   .title {
     font-size: 2.3em;
   }
+  .post-card,.project-card {
+    margin-right: 0;
+  }
 }
 @media screen and (max-width: 600px) {
   .title {
     font-size: 2.5em;
   }
 }
+
 @media screen and (max-width: 850px) {
+
+  .cover-photo {
+    width: 20em;
+    height: 25em;
+    background-size: cover;
+  }
   .container {
     margin-top: 2em;
     width: 98vw !important;
@@ -280,6 +345,7 @@ div[class^="col"] {
   .project-cards-container {
     justify-content: center;
   }
+
 
   .welcome {
     margin-top: 2em;
@@ -306,6 +372,12 @@ div[class^="col"] {
     font-size: 1.1em;
   }
 }
+@media screen and (max-height:600px){
+  /* .cover-photo {
+    width: 15em;
+    height: 20em;
+  } */
+}
 @media screen and (max-width: 900px) and (orientation: landscape) {
   .welcome .title{
     color: #fff;
@@ -320,6 +392,19 @@ div[class^="col"] {
     align-self: flex-end;
     margin-bottom: 2em;
     max-width: 25vw;
+    max-width: 12em;
+  }
+
+  .menu-container ul .title {
+    font-size: 2em;
+  }
+  .menu-container ul .title:hover {
+    color: #fff;
+  }
+  .menu-container ul {
+    padding: 1.5em;
+    padding-top: 2%;
+    padding-left: 20%;
   }
 }
 

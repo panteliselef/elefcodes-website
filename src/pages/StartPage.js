@@ -14,6 +14,7 @@ class StartPage extends Component {
 
   constructor(){
     super();
+    this.menuRef = React.createRef();
     this.state = {
       'burgerMenuOpened':false,
     }
@@ -22,6 +23,48 @@ class StartPage extends Component {
   toggleBurger = () => {
     this.setState({burgerMenuOpened:!this.state.burgerMenuOpened});
   }
+
+  closeMenu = (event) =>{
+    if(
+      this.props.location.pathname === event.target.getAttribute("href")
+    ){
+      this.setState({burgerMenuOpened:!this.state.burgerMenuOpened});
+      this.menuRef.current.classList.add("disabled");
+      setTimeout(()=>{
+        this.menuRef.current.style.display = 'none';
+      },500)
+      document.body.style.overflowY= "scroll";
+    }
+
+  }
+
+  toggleBurger = () => {
+    this.setState({burgerMenuOpened:!this.state.burgerMenuOpened});
+    console.log(this.menuRef.current.classList);
+    if(this.state.burgerMenuOpened) {
+      document.body.style.overflowY= "scroll";
+      this.menuRef.current.classList.add("disabled");
+      setTimeout(()=>{
+        this.menuRef.current.style.display = 'none';
+      },400)
+    }else {
+      document.body.style.overflowY= "hidden";
+      this.menuRef.current.style.display = 'block';
+      setTimeout(()=>{
+        this.menuRef.current.classList.remove("disabled");
+      },50)
+    }
+  }
+
+
+  componentDidMount = () => {
+    this.menuRef.current.classList.add("disabled");
+    document.body.style.overflowY= "scroll";
+    setTimeout(()=>{
+      this.menuRef.current.style.display = 'none';
+    },500)
+  }
+
 
 
   render() {
@@ -43,22 +86,25 @@ class StartPage extends Component {
             </Col>
           </Row>
           <Dividor top="1em"/>
-          <div style={{maxWidth:"1000px",margin:"auto"}}>
+          <div style={{maxWidth:"1200px",margin:"auto"}}>
 
             <Row between="xs" middle="xs">
               <Col xsOffset={4} mdOffset={0} xs={4} md={2} className="padding-1">
                 <Row center="xs">
                   <Col xs={6} md={4}>
-                    <img src={twitterIcon} width="auto" height="28px" style={{zIndex:'1'}} alt=""/>
+                    <a href="https://twitter.com/elefcodes">
+                      <img src={twitterIcon} width="auto" height="28px" style={{zIndex:'1'}} alt=""/>
+                    </a>
                   </Col>
                   <Col xs={6} md={2}>
-                    <img src={instagramIcon} width="auto" height="28px" style={{zIndex:'1'}} alt=""/>
-
+                    <a href="https://instagram.com/elefcodes">
+                      <img src={instagramIcon} width="auto" height="28px" style={{zIndex:'1'}} alt=""/>
+                    </a>
                   </Col>
                 </Row>
               </Col>
               <Col xs={12} md={4} className="padding-1">
-                <RoundedButton/>
+                <RoundedButton url="/instagram"/>
               </Col>
               <Col xsOffset={0} xs={12} md={4} className="padding-1">
                 <div id="some-text" style={{maxWidth:'20em',fontWeight:'bold',lineHeight:'1.5em',margin:'auto'}}>I am a Web Developer and a CS student with
@@ -72,23 +118,7 @@ class StartPage extends Component {
           <Dividor top="20px"/>
         </Grid>
         <BurgerMenuButton toggleBurger={this.toggleBurger} opened={this.state.burgerMenuOpened}/>
-        <Menu visible={this.state.burgerMenuOpened}/>
-        {/* <div style={{display:'grid',gridTemplateColumns:'minmax(auto,100px) auto'}}>
-          
-          <div style={{alignSelf:'flex-end'}}>
-            <div style={{minWidth:'80px',width:'100%',marginBottom:'3em',display:'flex',justifyContent:'space-around'}}>
-              <img src={twitterIcon} width="auto" height="28px" style={{zIndex:'1'}} alt=""/>
-              <img src={instagramIcon} width="auto" height="28px" style={{zIndex:'1'}} alt=""/>
-            </div>
-          </div>
-          <div>
-            
-            <div style={{display:'flex',marginTop:'2em',marginBottom:'2em',justifyContent:'space-around',alignItems:'center',padding:'0 0 0 6vw'}}>
-              
-
-            </div>
-          </div>
-        </div> */}
+        <Menu doOnClick={this.closeMenu} ref={this.menuRef}/>
       </div>
       
     );

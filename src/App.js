@@ -1,17 +1,30 @@
 import React, { Component } from 'react';
 // import './App.css';
+import ReactGA from 'react-ga';
 import ComingSoon from './pages/ComingSoon';
 import StartPage from './pages/StartPage';
 import TestPage from './pages/TestPage';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {BrowserRouter,Router, Switch, Route} from 'react-router-dom';
 import ProjectsPage from './pages/ProjectsPage';
 import InstagramPage from './pages/InstagramPage';
+import createHistory from 'history/createBrowserHistory';
 
-
+const history = createHistory();
+history.listen((location, action) => {
+  ReactGA.pageview(location.pathname)
+  console.log(action, location.pathname, location.state)
+});
 class App extends Component {
+  componentDidMount(){
+    
+    ReactGA.initialize('UA-81492469-1');
+    ReactGA.pageview('/');
+  }
+
   render() {
     return (
-      <BrowserRouter>
+      
+      <Router history={history}>
         <div className="App">
           {/* <Navbar/> */}
           <Switch>
@@ -25,7 +38,7 @@ class App extends Component {
             <Route path='/create' component={CreateProject} /> */}
           </Switch>
         </div>
-      </BrowserRouter>
+      </Router>
     );
   }
 }

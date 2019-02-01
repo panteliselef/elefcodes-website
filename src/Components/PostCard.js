@@ -18,12 +18,10 @@ const PostCard  = ({post}) => {
         </Row>
       </Grid>
       </div>
-      <div className="image-frame" style={{backgroundImage:`url(${post.images.standard_resolution.url})`}}>
-        
-      </div>
+      <div className="image-frame" style={{backgroundImage:`url(${post.images.standard_resolution.url})`}}></div>
       <div className="bottom-section" style={{padding:'0.8em'}}>
       <Row center="xs">
-          <Col xs={12}>VIEW ON INSTAGRAM <img src={openNew} style={{transform:'translateY(2px)',marginLeft:'1em'}} height="15px"></img></Col>
+          <Col xs={12}><a target="blank" style={{textDecoration:'none',color:'initial'}} href={post.link}>VIEW ON INSTAGRAM <img src={openNew} style={{transform:'translateY(2px)',marginLeft:'1em'}} height="15px"></img></a></Col>
         </Row>
       </div>
     </div>

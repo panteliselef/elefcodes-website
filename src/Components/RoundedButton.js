@@ -1,10 +1,11 @@
 import React from "react";
 
-const PageTitle = () => {
+import {NavLink} from 'react-router-dom';
+const PageTitle = ({url}) => {
   return (
-    <div className="rounded-button">
+    <NavLink className="rounded-button" to={url}>
       Recent Posts
-    </div>
+    </NavLink>
   );
 }
 
