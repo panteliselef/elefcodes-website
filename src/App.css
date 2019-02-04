@@ -114,8 +114,9 @@ select {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
 .project-card .top-section {
-  padding-top: 0.6em;
+  /* padding-top: 0.6em; */
   padding-left: 1em;
   display: flex;
   padding-bottom: 0;
@@ -126,8 +127,9 @@ select {
   background-image: url("./images/project-card-person.svg");
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: left bottom;
+  background-position: right bottom;
   width: 100%;
+  margin-top: 0.6em;
   height: 90px;
 }
 .project-card .bottom-section {
