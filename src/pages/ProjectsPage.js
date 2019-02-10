@@ -12,6 +12,7 @@ import Dividor from '../Components/Dividor';
 import ProjectCard from '../Components/ProjectCard';
 import coverPhoto from '../images/projects-page-image.svg';
 import LoadingDiv from '../Components/LoadingDiv';
+import { connect } from 'react-redux';
 class ProjectsPage extends Component {
   constructor(){
     super();
@@ -60,22 +61,27 @@ class ProjectsPage extends Component {
     }
   }
 
-  componentDidMount = () => {
-    this.menuRef.current.classList.add("disabled");
-    document.body.style.overflowY= "scroll";
-    setTimeout(()=>{
-      this.menuRef.current.style.display = 'none';
-    },500)
-    fetch("https://api.github.com/users/panteliselef/repos")
-      .then(response=>response.json())
-      .then(data=>{
-        console.log(data);
-        this.setState({repos:data,isLoading:false});
-      });
+  // componentDidMount = () => {
+  //   this.menuRef.current.classList.add("disabled");
+  //   document.body.style.overflowY= "scroll";
+  //   setTimeout(()=>{
+  //     this.menuRef.current.style.display = 'none';
+  //   },500)
+  //   fetch("https://api.github.com/users/panteliselef/repos")
+  //     .then(response=>response.json())
+  //     .then(data=>{
+  //       console.log(data);
+  //       this.setState({repos:data,isLoading:false});
+  //     });
+  // }
+
+  press = () => {
+    this.props.addRepo();
   }
 
 
   render() {
+    console.log(this.props);
     return (
       <div className="container">
         <Grid fluid>
@@ -91,13 +97,16 @@ class ProjectsPage extends Component {
             </select>
           </Row>
           <Row>
+            <button onClick={this.press}>Press Me</button>
+          </Row>
+          <Row>
             <div className="project-cards-container">
             {this.state.isLoading
               ? (
                 <LoadingDiv/>
                 )
               :( 
-                this.state.repos.map(repo=><ProjectCard key={repo.id} projectName={repo.name} description={repo.description} url={repo.clone_url}/>)
+                this.props.repos.map(repo=><ProjectCard key={repo.id} projectName={repo.name} description={repo.description} url={repo.clone_url}/>)
                 )
               }
             </div>
@@ -114,4 +123,16 @@ class ProjectsPage extends Component {
   }
 }
 
-export default ProjectsPage;
+const mapStateToProps = (state) => {
+  return {
+    repos: state.repos
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addRepo: () => { dispatch({type:'ADD_REPO'})}
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(ProjectsPage);
