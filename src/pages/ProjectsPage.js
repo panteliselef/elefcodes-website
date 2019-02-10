@@ -61,19 +61,19 @@ class ProjectsPage extends Component {
     }
   }
 
-  // componentDidMount = () => {
-  //   this.menuRef.current.classList.add("disabled");
-  //   document.body.style.overflowY= "scroll";
-  //   setTimeout(()=>{
-  //     this.menuRef.current.style.display = 'none';
-  //   },500)
-  //   fetch("https://api.github.com/users/panteliselef/repos")
-  //     .then(response=>response.json())
-  //     .then(data=>{
-  //       console.log(data);
-  //       this.setState({repos:data,isLoading:false});
-  //     });
-  // }
+  componentDidMount = () => {
+    this.menuRef.current.classList.add("disabled");
+    document.body.style.overflowY= "scroll";
+    setTimeout(()=>{
+      this.menuRef.current.style.display = 'none';
+    },500)
+    fetch("https://api.github.com/users/panteliselef/repos")
+      .then(response=>response.json())
+      .then(data=>{
+        console.log(data);
+        this.setState({repos:data,isLoading:false});
+      });
+  }
 
   press = () => {
     this.props.addRepo();
@@ -97,7 +97,7 @@ class ProjectsPage extends Component {
             </select>
           </Row>
           <Row>
-            <button onClick={this.press}>Press Me</button>
+            {/* <button onClick={this.press}>Press Me</button> */}
           </Row>
           <Row>
             <div className="project-cards-container">
