@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import ReactGA from 'react-ga';
 import ComingSoon from './pages/ComingSoon';
 import StartPage from './pages/StartPage';
-import TestPage from './pages/TestPage';
 import {BrowserRouter,Router, Switch, Route} from 'react-router-dom';
 import ProjectsPage from './pages/ProjectsPage';
 import InstagramPage from './pages/InstagramPage';
