@@ -106,7 +106,7 @@ class ProjectsPage extends Component {
                 <LoadingDiv/>
                 )
               :( 
-                this.props.repos.map(repo=><ProjectCard key={repo.id} projectName={repo.name} description={repo.description} url={repo.clone_url}/>)
+                this.state.repos.map(repo=><ProjectCard key={repo.id} projectName={repo.name} description={repo.description} url={repo.clone_url}/>)
                 )
               }
             </div>
@@ -123,16 +123,17 @@ class ProjectsPage extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    repos: state.repos
-  }
-}
+// const mapStateToProps = (state) => {
+//   return {
+//     repos: state.repos
+//   }
+// }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addRepo: () => { dispatch({type:'ADD_REPO'})}
-  }
-}
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     addRepo: () => { dispatch({type:'ADD_REPO'})}
+//   }
+// }
 
-export default connect(mapStateToProps,mapDispatchToProps)(ProjectsPage);
+// export default connect(mapStateToProps,mapDispatchToProps)(ProjectsPage);
+export default ProjectsPage;
