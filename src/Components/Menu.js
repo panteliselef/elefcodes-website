@@ -13,7 +13,7 @@ const Menu  = React.forwardRef(({visible,doOnClick},ref) => {
 
         <ul>
           <li className="title" onClick={doOnClick} ><NavLink to='/' >Home</NavLink></li>
-          <li className="title" onClick={doOnClick}><NavLink to='/instagram' >Instagram</NavLink></li>
+          {/* <li className="title" onClick={doOnClick}><NavLink to='/instagram' >Instagram</NavLink></li> */}
           <li className="title" onClick={doOnClick}><NavLink to='/projects' >Projects</NavLink></li>
         </ul>
       </div>
