@@ -1,10 +1,8 @@
 import React, {Component} from "react";
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import PageTitle from "../Components/PageTitle";
-import ProjectCard from "../Components/ProjectCard";
 import BurgerMenuButton from "../Components/BurgerMenuButton ";
 import Menu from "../Components/Menu";
-import coverPhoto from '../images/instagram-page-image.png';
 import coverPhoto2 from '../images/instagram-page-image2.png';
 import PostCard from "../Components/PostCard";
 import LoadingDiv from "../Components/LoadingDiv";

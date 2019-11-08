@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import ReactGA from 'react-ga';
 import ComingSoon from './pages/ComingSoon';
 import StartPage from './pages/StartPage';
-import {BrowserRouter,Router, Switch, Route} from 'react-router-dom';
+import {Router, Switch, Route} from 'react-router-dom';
 import ProjectsPage from './pages/ProjectsPage';
-import InstagramPage from './pages/InstagramPage';
+// import InstagramPage from './pages/InstagramPage';
 import createHistory from 'history/createBrowserHistory';
 
 const history = createHistory();
@@ -30,7 +30,8 @@ class App extends Component {
             <Route exact path='/' component={StartPage} />
             <Route exact path='/soon' component={ComingSoon} />
             <Route exact path='/projects' component={ProjectsPage} />
-            <Route exact path='/instagram' component={InstagramPage} />
+            {/* Removing Instagram Page, due to new instagram API */}
+            {/* <Route exact path='/instagram' component={InstagramPage} /> */}
             {/* <Route path='/project/:id' component={ProjectDetails} />
             <Route path='/signin' component={SignIn} />
             <Route path='/signup' component={SignUp} />
